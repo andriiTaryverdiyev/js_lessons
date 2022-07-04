@@ -1,14 +1,12 @@
-const includes = (arr, num) => {
-    let number = false
-    for(let i=0;i<arr.length;i++){
-      if(arr[i]===num){
-         number=true
-      }
-      
+function removeDublicates(array) {
+    let arr = []
+    const tempArray = [...array].sort()
+    for (let i = 0; i < tempArray.length; i++) {
+        if (tempArray[i + 1] !== tempArray[i]) {
+            arr.push(tempArray[i])
+        }
     }
-    return number
-  };
+    return arr
+}
 
-// examples
-includes([1, 4, 8, 3], 3); // ==> true
-includes([1, 4, 8, 3], 5); // ==> false
+removeDublicates([1, 1, 4, 8, 3, 1, 4, 5, 6], );
