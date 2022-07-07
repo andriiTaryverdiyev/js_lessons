@@ -1,11 +1,7 @@
-function sumArray(arr1, arr2) {
-    let array = arr1.concat(arr2)
-
-
-    return array.sort((a, b) => a - b).filter((el, id) => array
-        .indexOf(el) === id)
+function getTotalPrice(arr) {
+    return `$${Math.floor(arr.reduce((acc, el) => acc + el, 0) * 100) / 100}`
 }
 
 
 
-console.log(sumArray([1, 5, 3, 4, 2], [8, 9, 6, 2, 3, 7]))
+console.log(getTotalPrice([1.3142, 5.412, 3.21, 4.78, 2.98]))
