@@ -6,7 +6,7 @@ it('shoud get squared numbers', () => {
     expect(result).toEqual([1, 4, 9])
 })
 it('shoud keep odd numbers only', () => {
-    const result = getoddNumbers([1, 2, 3, 4, 5])
+    const result = getoddNumbers([1, 2, 3, 4, 5, 6, 8, 10])
 
     expect(result).toEqual([1, 3, 5])
 })
