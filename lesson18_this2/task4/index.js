@@ -1,11 +1,23 @@
-'use strict';
+export function saveFuncCalls(func) {
+    let callsHistory = [];
 
-/**
- * @param {function} func
- * @return {function}
- */
-function saveFuncCalls(func) {
-    callsHistory = []
+
+    function withHistory() {
+        if (arguments.length > 0) {
+            let n = []
+
+            for (let i = 0; i < arguments.length; i++) {
+
+                n.push(arguments[i])
+            }
+            callsHistory.push(n)
+            return (func(arguments[0], arguments[1]))
+        }
+        return func.call(this)
+    }
+    withHistory.callsHistory = callsHistory
+
+    return (withHistory)
 }
 
 // example 1
