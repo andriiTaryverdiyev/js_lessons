@@ -8,11 +8,11 @@ const vehicle = {
 };
 const ship = {
     name: 'Argo',
-    startMachine() {
+    startMachine: function() {
         console.log(`${this.name} lifting anchor up`)
         vehicle.move()
     },
-    stopMachine() {
+    stopMachine: function() {
         vehicle.stop()
         console.log(`${this.name} lifting anchor down`)
     },
@@ -22,7 +22,9 @@ function getOwnProps() {
     let result = []
     for (let prop in ship) {
         if (ship.hasOwnProperty(prop)) {
-            result.push(prop)
+            if (typeof(prop) !== 'function') {
+                result.push(prop)
+            }
         }
     }
     console.log(result)
