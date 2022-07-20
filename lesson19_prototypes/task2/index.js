@@ -4,31 +4,31 @@ const vehicle = {
     },
     stop() {
         console.log(`${ship.name} stopped`)
-    }
+    },
 };
+
+
 const ship = {
     name: 'Argo',
-    startMachine: function() {
+    startMachine() {
         console.log(`${this.name} lifting anchor up`)
         vehicle.move()
     },
-    stopMachine: function() {
+    stopMachine() {
         vehicle.stop()
         console.log(`${this.name} lifting anchor down`)
     },
 }
 
-function getOwnProps() {
-    let result = []
-    for (let prop in ship) {
-        if (ship.hasOwnProperty(prop)) {
-            if (typeof(prop) !== 'function') {
-                result.push(prop)
-            }
-        }
+let con = (Object.values(name))
+console.log(con)
+for (let i = 0; i < con.length; i++) {
+    if (typeof(con[i]) !== 'function') {
+        console.log(Object.keys(name)[i])
     }
-    console.log(result)
+
 }
+
 getOwnProps()
 
 // export function getOwnProps(obj) {
@@ -39,4 +39,4 @@ getOwnProps()
 //         }
 //     }
 //     return result
-// }
+//
