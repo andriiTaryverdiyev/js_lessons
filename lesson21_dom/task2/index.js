@@ -3,10 +3,10 @@ export const getTitleElement = () => {
     console.dir(titleElem)
     return titleElem
 }
-export const getImputElement = () => {
+export const getInputElement = () => {
     const inputElem = document.querySelector('input[type="text"]')
     console.dir(inputElem)
     return inputElem
 }
 getTitleElement()
-getImputElement()
+getInputElement()
