@@ -1,6 +1,6 @@
 'use strict';
 
-export const tasks = [
+const tasks = [
     { text: 'Buy milk', done: false },
     { text: 'Pick up Tom from airport', done: false },
     { text: 'Visit party', done: false },
@@ -14,7 +14,8 @@ export const tasks = [
  */
 const renderTasks = tasksList => {
     const listElem = document.querySelector('.list')
-    const listItemsElems = listItems
+
+    const listItemsElems = tasksList
         .sort((a, b) => a.done - b.done)
         .map(({ text, done }) => {
             const listItemElem = document.createElement('li');
@@ -24,6 +25,9 @@ const renderTasks = tasksList => {
             }
             const checkboxElem = document.createElement('input')
             checkboxElem.setAttribute('type', 'checkbox')
+            checkboxElem.checked = done
+            checkboxElem.classList.add('list__item-checkbox');
+            listItemElem.append(checkboxElem, text)
             return listItemElem
         })
 
