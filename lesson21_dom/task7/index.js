@@ -3,4 +3,3 @@ export function clearList() {
         .querySelector('.categories')
         .innerHTML = ''
 }
-clearList()
