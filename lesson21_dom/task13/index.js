@@ -4,7 +4,7 @@ export function getSection(num) {
     for (let elem of array) {
         let elemNum = Number(elem.dataset.number)
         if (elemNum === num) {
-            return (elem.parentNode.dataset)
+            return (elem.parentNode.dataset.section)
         }
     }
 }
