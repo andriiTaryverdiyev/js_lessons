@@ -1,6 +1,5 @@
 export function setButton(buttonText) {
     document
         .querySelector('body')
-        .innerHTML = `<button>  ${buttonText} </button>`
-
+        .innerHTML = `<button>${buttonText}</button>`
 }
