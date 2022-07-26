@@ -3,4 +3,3 @@ export function setButton(text) {
         .querySelector('body')
         .innerHTML = `<button>  ${text} </button>`
 }
-setButton('button')
