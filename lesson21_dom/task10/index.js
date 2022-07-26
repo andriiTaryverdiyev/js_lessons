@@ -13,4 +13,3 @@ export function finishForm() {
 
     body.append(password)
 }
-finishForm()
