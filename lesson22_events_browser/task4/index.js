@@ -1,9 +1,9 @@
 const statusCheckbox = document.querySelector('.task-status')
 const consoler = () => {
     if (statusCheckbox.checked) {
-        console.log(true)
+        console.log(statusCheckbox.checked)
     } else {
-        console.log(false)
+        console.log(statusCheckbox.checked)
     }
 }
 statusCheckbox.addEventListener('click', consoler)
