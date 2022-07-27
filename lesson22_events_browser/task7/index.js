@@ -1,6 +1,6 @@
-const button = document.querySelector('.btn')
+const click = document.querySelector('body')
 const handleClick = () => {
     console.log(event.target.textContent)
 }
-button.addEventListener('click', handleClick)
-button.addEventListener('click', handleClick)
+click.addEventListener('click', handleClick)
+click.addEventListener('click', handleClick)
