@@ -6,4 +6,4 @@ const consoler = () => {
         console.log(statusCheckbox.checked)
     }
 }
-statusCheckbox.addEventListener('click', consoler)
+statusCheckbox.addEventListener('change', consoler)
