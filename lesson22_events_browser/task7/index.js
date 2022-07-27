@@ -1,6 +1,5 @@
 const button = document.querySelector('body')
 const handleClick = () => {
-    let elem = event.target
-    console.log(elem.textContent)
+    console.log(event.target.textContent)
 }
 button.addEventListener('click', handleClick)
