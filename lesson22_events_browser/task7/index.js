@@ -1,5 +1,8 @@
-const click = document.querySelector('.btn')
+const array = document.querySelectorAll('.btn')
+const firstButton = document.querySelector('.btn')
+const lastButton = array[array.length - 1]
 const handleClick = () => {
     console.log(event.target.textContent)
 }
-click.addEventListener('click', handleClick)
+firstButton.addEventListener('click', handleClick)
+lastButton.addEventListener('click', handleClick)
