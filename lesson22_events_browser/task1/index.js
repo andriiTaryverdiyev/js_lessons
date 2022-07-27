@@ -2,6 +2,15 @@ const divElem = document.querySelector('.rect_div');
 const pElem = document.querySelector('.rect_p');
 const spanElem = document.querySelector('.rect_span');
 
+const clearButton = document.querySelector('.clear-btn')
+const eventsList = document.querySelector('.events-list')
+
+const removeEvents = () => {
+    while (eventsList.lastChild) {
+        eventsList.removeChild(eventsList.firstChild)
+    }
+}
+
 const logTarget = (text, color) => {
     const eventsListElem = document.querySelector('.events-list');
     eventsListElem.innerHTML += `<span style = "color:${color};margin-left:8px" >${text}</span>`
@@ -23,3 +32,5 @@ spanElem.addEventListener('click', logGreenspan)
 divElem.addEventListener('click', logGreyDiv, true)
 pElem.addEventListener('click', logGreyP, true)
 spanElem.addEventListener('click', logGreyspan, true)
+
+clearButton.addEventListener('click', removeEvents)
