@@ -70,7 +70,11 @@ const createButton = document.querySelector('.create-task-btn')
 
 const taskCreator = () => {
     console.log(input.value)
-    tasks.push({ text: input.value, done: false })
+    if (input.value.length > 0) {
+        tasks.push({ text: input.value, done: false })
+        reload()
+    }
+
     reload()
 }
 createButton.addEventListener('click', taskCreator)
