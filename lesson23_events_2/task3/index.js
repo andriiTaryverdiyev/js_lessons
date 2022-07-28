@@ -64,3 +64,13 @@ for (let elem of checkButtons) {
     }
     elem.addEventListener('click', changeStatus)
 }
+
+const input = document.querySelector('.task-input')
+const createButton = document.querySelector('.create-task-btn')
+
+const taskCreator = () => {
+    console.log(input.value)
+    tasks.push({ text: input.value, done: false })
+    reload()
+}
+createButton.addEventListener('click', taskCreator)
