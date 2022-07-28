@@ -32,11 +32,11 @@ const onEmailChange = event => {
 
 const onPasswordChange = event => {
     const errorText = validate('password', event.target.value);
-    emailErrorElem.textContent = errorText;
+    passwordErrorElem.textContent = errorText;
 }
 
-emailInputElem.addEventListener(input, onEmailChange);
-passwordInputElem.addEventListener(input, onPasswordChange);
+emailInputElem.addEventListener('input', onEmailChange);
+passwordInputElem.addEventListener('input', onPasswordChange);
 
 const formElem = document.querySelector('.login-form');
 
