@@ -43,7 +43,7 @@ const formElem = document.querySelector('.login-form');
 const onFormSubmit = event => {
     event.preventDefault();
     const formData = [...new FormData(formElem)]
-        .reduce((acc, [field, value]) => ({...acc, [field]: value }))
+        .reduce((acc, [field, value]) => ({...acc, [field]: value }), {})
 
     alert(JSON.stringify(formData))
 }
