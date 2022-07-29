@@ -29,5 +29,3 @@ const getDiff = (startDate, endDate) => {
 
     return dhm(result)
 }
-
-console.log(getDiff(new Date(2021, 0, 1), new Date(2022, 0, 1)))
