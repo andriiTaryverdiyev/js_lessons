@@ -12,6 +12,7 @@ const idGenerator = () => {
     memory += 1
     return memory
 }
+
 const renderTasks = tasksList => {
     const tasksElems = tasksList
         .sort((a, b) => a.done - b.done)
@@ -46,24 +47,28 @@ renderTasks(tasks);
 
 const checkButtons = document.querySelectorAll('.list__item-checkbox')
 const listItemElem = document.querySelector('li')
-for (let elem of checkButtons) {
-    const changeStatus = () => {
 
+// Block with problems ---------------------------------------
+
+for (let elem of checkButtons) {
+    console.log('test')
+    const changeStatus = () => {
         console.log(tasks[elem.dataset.id].done)
-        if (tasks[elem.dataset.id].done != true) {
-            tasks[elem.dataset.id].done = true
-            console.log(tasks[elem.dataset.id].done)
-            reload()
-            return
-        }
         if (tasks[elem.dataset.id].done = true) {
             tasks[elem.dataset.id].done = false
             console.log(tasks[elem.dataset.id].done)
             reload()
         }
+        if (tasks[elem.dataset.id].done != true) {
+            tasks[elem.dataset.id].done = true
+            console.log(tasks[elem.dataset.id].done)
+            reload()
+        }
     }
-    elem.addEventListener('click', changeStatus)
+    elem.addEventListener('change', changeStatus)
 }
+
+//  -----------------------------------------------------------
 
 const input = document.querySelector('.task-input')
 const createButton = document.querySelector('.create-task-btn')
