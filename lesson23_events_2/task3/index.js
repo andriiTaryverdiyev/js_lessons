@@ -40,6 +40,7 @@ const reload = () => {
     while (listElem.firstChild) {
         listElem.removeChild(listElem.firstChild)
     }
+    memory = -1
     renderTasks(tasks);
 }
 
@@ -65,8 +66,29 @@ for (let elem of checkButtons) {
             reload()
         }
     }
-    elem.addEventListener('change', changeStatus)
+    elem.addEventListener('change', changeStatus, reload)
 }
+
+
+//--------------------test-------------------------------
+// const checkButton = document.querySelector('.list__item-checkbox')
+
+// const changeStatus = () => {
+//     console.log(tasks[checkButton.dataset.id].done)
+//     if (tasks[checkButton.dataset.id].done = true) {
+//         tasks[checkButton.dataset.id].done = false
+//         console.log(tasks[checkButton.dataset.id].done)
+//         reload()
+
+//     }
+//     if (tasks[checkButton.dataset.id].done != true) {
+//         tasks[checkButton.dataset.id].done = true
+//         console.log(tasks[checkButton.dataset.id].done)
+//         reload()
+//     }
+// }
+
+// checkButton.addEventListener('click', changeStatus)
 
 //  -----------------------------------------------------------
 
