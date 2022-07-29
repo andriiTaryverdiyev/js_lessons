@@ -18,7 +18,7 @@ function dhm(t) {
 }
 
 
-const getDiff = (startDate, endDate) => {
+export const getDiff = (startDate, endDate) => {
     let result = 0
     if (startDate >= endDate) {
         result = (startDate - endDate)
