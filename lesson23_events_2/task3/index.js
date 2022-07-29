@@ -51,46 +51,35 @@ const listItemElem = document.querySelector('li')
 
 // Block with problems ---------------------------------------
 
-for (let elem of checkButtons) {
-    console.log('test')
-    const changeStatus = () => {
-        console.log(tasks[elem.dataset.id].done)
-        if (tasks[elem.dataset.id].done = true) {
-            tasks[elem.dataset.id].done = false
-            console.log(tasks[elem.dataset.id].done)
-            reload()
-        }
-        if (tasks[elem.dataset.id].done != true) {
-            tasks[elem.dataset.id].done = true
-            console.log(tasks[elem.dataset.id].done)
-            reload()
-        }
-    }
-    elem.addEventListener('change', changeStatus, reload)
+listElem.addEventListener('click', changeStatus)
+
+function changeStatus(event) {
+    let mem = tasks[event.target.dataset.id]
+    mem.done === false ? mem.done = true : mem.done = false
+    reload()
+    console.log(mem.done)
 }
-
-
-//--------------------test-------------------------------
-// const checkButton = document.querySelector('.list__item-checkbox')
-
-// const changeStatus = () => {
-//     console.log(tasks[checkButton.dataset.id].done)
-//     if (tasks[checkButton.dataset.id].done = true) {
-//         tasks[checkButton.dataset.id].done = false
-//         console.log(tasks[checkButton.dataset.id].done)
-//         reload()
-
+// for (let elem of checkButtons) {
+//     console.log('test')
+//     const changeStatus = () => {
+//         console.log(tasks[elem.dataset.id].done)
+//         if (tasks[elem.dataset.id].done = true) {
+//             tasks[elem.dataset.id].done = false
+//             console.log(tasks[elem.dataset.id].done)
+//             reload()
+//         }
+//         if (tasks[elem.dataset.id].done != true) {
+//             tasks[elem.dataset.id].done = true
+//             console.log(tasks[elem.dataset.id].done)
+//             reload()
+//         }
 //     }
-//     if (tasks[checkButton.dataset.id].done != true) {
-//         tasks[checkButton.dataset.id].done = true
-//         console.log(tasks[checkButton.dataset.id].done)
-//         reload()
-//     }
+//     elem.addEventListener('change', changeStatus, reload)
 // }
 
-// checkButton.addEventListener('click', changeStatus)
 
-//  -----------------------------------------------------------
+//------------------------------------------------------------
+
 
 const input = document.querySelector('.task-input')
 const createButton = document.querySelector('.create-task-btn')
