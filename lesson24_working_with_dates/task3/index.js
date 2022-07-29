@@ -1,21 +1,13 @@
 export const getDiff = (startDate, endDate) => {
-    function dhm(t) {
-        let cd = 24 * 60 * 60 * 1000,
-            ch = 60 * 60 * 1000,
-            d = Math.floor(t / cd),
-            h = Math.floor((t - d * cd) / ch),
-            m = Math.round((t - d * cd - h * ch) / 60000),
-            s = Math.round((t - d * cd - h * ch) / 600000)
-        pad = function(n) { return n < 10 ? '0' + n : n; };
-        if (m === 60) {
-            h++;
-            m = 0;
-        }
-        if (h === 24) {
-            d++;
-            h = 0;
-        }
-        return [d + 'd ', , pad(h) + 'h ', pad(m) + 'm ', pad(s) + 's '].join('');
+    function dhm(ms) {
+        const days = Math.floor(ms / (24 * 60 * 60 * 1000));
+        const daysms = ms % (24 * 60 * 60 * 1000);
+        const hours = Math.floor(daysms / (60 * 60 * 1000));
+        const hoursms = ms % (60 * 60 * 1000);
+        const minutes = Math.floor(hoursms / (60 * 1000));
+        const minutesms = ms % (60 * 1000);
+        const sec = Math.floor(minutesms / 1000);
+        return days + "d " + hours + "h " + minutes + "m " + sec + "s";
     }
     let result = 0
     if (startDate >= endDate) {
@@ -27,3 +19,5 @@ export const getDiff = (startDate, endDate) => {
 
     return dhm(result)
 }
+
+//  console.log(getDiff(new Date(2022, 0, 1, 23, 40, 30), new Date(2022, 0, 1, 23, 40, 35)))
